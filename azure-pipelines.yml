@@ -10,8 +10,11 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
+- script: npm i
+  displayName: 'Install'
+
 - script: npm run build
-  displayName: 'BUILD'
+  displayName: 'Build'
 
 # - script: |
 #    echo Add other tasks to build, test, and deploy your project.
