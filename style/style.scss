@@ -1,0 +1,108 @@
+@import "colors";
+
+.yellowBg {
+  background-color: $yellow;
+}
+.whiteBg {
+  background-color: $white;
+}
+.backBg {
+  background-color: $black;
+}
+
+.heroContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.heroImage {
+  height: 120vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.heroHeader {
+  color: $white;
+  font-size: 38px;
+  text-align: center;
+  margin-top: 90px;
+}
+.root { // header
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;;
+  overflow: hidden;
+}
+.rootContent {
+  display: flex;
+  align-items: center;
+  margin-top: 7vh;
+}
+.mainLine {
+  flex: 1 1 auto;
+  height: 1px;
+  opacity: 0.2;
+  margin: 0 1vw;
+  background-color: $white;
+}
+.sideLine {
+  flex: 0 1 3vw;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.rectangle {
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.rectangleSmall {
+  height: 32px;
+  width: 170px;
+  border-radius: 17px;
+  padding: 0 5px 0 10px;
+  font-size: 14px;
+}
+.rectangleBig {
+  padding: 0 10px 0 10px;
+  font-size: 16px;
+  height: 54px;
+  width: 300px;
+  border-radius: 27px;
+}
+.rectangleText {
+  flex: 1 0 auto;
+  text-align: center;
+}
+.rectangleCircle {
+  border-radius: 50%;
+  margin-left: auto;
+}
+.rectangleCircleSmall {
+  width: 25px;
+  height: 25px;
+}
+.rectangleCircleBig {
+  width: 32px;
+  height: 32px;
+}
+.freeConsultationText {
+  color: $white;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+
+/* remove */
+.test {
+  height: 1000px;
+}

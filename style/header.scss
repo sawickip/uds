@@ -1,0 +1,14 @@
+@import "colors";
+
+.root {
+  display: flex;
+  min-height: 100px;
+}
+
+.mainLine {
+  height: 1px;
+  width: 100%;
+  opacity: 0.2;
+  margin: 0 50px;
+  background-color: $white;
+}
