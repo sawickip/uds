@@ -1,0 +1,32 @@
+@import "../../style/colors.scss";
+
+.root {
+  position: relative;
+  padding-left: 40px;
+}
+
+.name {
+  color: $yellow;
+  font-size: 12px;
+  margin-left: 21px;
+}
+
+.bigText {
+  color: $white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.bottomText {
+  color: $yellow;
+  font-size: 20px;
+  float: right;
+}
+
+.superman {
+  position: absolute;
+  left: -10px;
+  top: -50px;
+  height: 100px;
+  fill: $white;
+}

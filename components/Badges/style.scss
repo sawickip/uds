@@ -1,0 +1,98 @@
+@import "../../style/colors.scss";
+
+$transitionDuration: 500ms;
+$transitionDelay: 200ms;
+
+.root {
+  margin-bottom: 50px;
+}
+
+.list {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  position: relative;
+  flex: 1 1 auto;
+  margin-right: 20px;
+  min-height: 330px;
+  text-align: center;
+  color: $white;
+  border-radius: 10px;
+  transition: $transitionDuration all;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    background: $white;
+    color: $black;
+
+    .circle {
+      background: $black;
+      transform: translateY(-85px) scale(0.6);
+      border-width: 0px;
+    }
+
+    .title {
+      transform: translateY(-130px);
+    }
+
+    .text {
+      opacity: 1;
+      transform: translateY(-10px);
+      transition-delay: $transitionDelay;
+    }
+  }
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $white;
+  width: 175px;
+  height: 175px;
+  margin: 0 auto 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: $transitionDuration all;
+}
+
+.title {
+  font-size: 24px;
+  transition: $transitionDuration transform;
+}
+
+.text {
+  position: absolute;
+  top: 140px;
+  margin: 0 20px;
+  opacity: 0;
+  font-size: 16px;
+  line-height: 26px;
+  transition: ($transitionDuration - $transitionDelay) transform, ($transitionDuration - $transitionDelay) opacity;
+}
+
+.iconFast {
+  width: 100px;
+  height: 100px;
+  fill: $white;
+}
+
+.iconSafety {
+  width: 80px;
+  height: 80px;
+  fill: $white;
+}
+
+.iconStar {
+  position: relative;
+  top: -6px;
+  width: 80px;
+  height: 80px;
+  fill: white;
+}

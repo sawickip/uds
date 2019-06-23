@@ -1,50 +1,72 @@
+import React from 'react';
 import Link from 'next/link';
 import { Parallax } from 'react-scroll-parallax';
 import cls from 'classnames';
+import Sidebar from "react-sidebar";
 
 // CSS reset
-
 import css from '../style/style.scss';
 
+import Arrow, { DIRECTION, COLOR } from '../components/Arrow'
 import Head from '../components/Head';
+import TopSuperman from '../components/TopSuperman';
+import Badges from '../components/Badges';
+
+import SportCircles from '../components/SportCircles';
 
 
-const image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Paracas_National_Reserve%2C_Ica%2C_Peru-3April2011.jpg/1200px-Paracas_National_Reserve%2C_Ica%2C_Peru-3April2011.jpg';
+
+const image = '../static/pexels-photo-416676.jpg';
+
+import SuperheroSVG from '../static/superhero.svg';
 
 
 export default () => {
   return (
-    <div>
+    <React.Fragment>
       <Head />
       <div className={css.heroContainer}>
 
         <header className={css.root}>
           <div className={css.rootContent}>
+
+            <span className={cls(css.mainLine, css.sideLine)} />
+            <TopSuperman />
             <span className={css.mainLine} />
+
             <button className={cls(css.rectangle, css.rectangleSmall, css.whiteBg)}>
               <span className={css.rectangleText}>
                 Informacje o nas
               </span>
-
-              <span className={cls(css.rectangleCircle, css.rectangleCircleSmall, css.yellowBg)} />
+              <span className={cls(css.rectangleCircle, css.rectangleCircleSmall, css.yellowBg)}>
+                <Arrow direction={DIRECTION.down} color={COLOR.black} />
+              </span>
             </button>
+
             <span className={cls(css.mainLine, css.sideLine)} />
           </div>
 
-          <h1 className={css.heroHeader}>
+          <h2 className={css.heroHeader}>
             Nasze ubezpieczenia są jak superbohaterowie:
-          </h1>
+          </h2>
 
-          <span className={css.freeConsultationText}>
-            Skorzystaj z darmowej konsultacji
-          </span>
+          <Badges />
 
-          <button className={cls(css.rectangle, css.rectangleBig, css.yellowBg)}>
-            <span className={css.rectangleText}>
-              Wyślij swoje zgłoszenie
-            </span>
-            <span className={cls(css.rectangleCircle, css.rectangleCircleBig, css.backBg)} />
-          </button>
+        
+          <div>
+            <p className={css.freeConsultationText}>
+              Skorzystaj z <strong>darmowej</strong> konsultacji
+            </p>
+
+            <button className={cls(css.rectangle, css.rectangleBig, css.yellowBg)}>
+              <span className={css.rectangleText}>
+                Wyślij swoje zgłoszenie
+              </span>
+              <span className={cls(css.rectangleCircle, css.rectangleCircleBig, css.backBg)}>
+                <Arrow direction={DIRECTION.up} color={COLOR.white} />
+              </span>
+            </button>
+          </div>
         </header>
 
         <Parallax
@@ -62,16 +84,47 @@ export default () => {
         </Parallax>
       </div>
 
-      {/* remove */}
-      <div className={css.test}>1</div>
+      <section>
+          <div className={css.threeHeroes}>
+            <SuperheroSVG className={css.hero} />
+            <SuperheroSVG className={css.bigHero} />
+            <SuperheroSVG className={css.hero} />
+          </div>
 
-      <div>
-          Click{' '}
-          <Link href="/xxx">
-              <a>here</a>
-          </Link>{' '}
-          to read more
-      </div>
-    </div>
+          <h2 className={css.mainText}><strong>Nasze wsparcie.</strong> Twój spokój i bezpieczeństwo</h2>
+          <h3 className={css.subText}>Jesteśmy otwarci na wspieranie wielu dyscyplin by zapewnić bezpieczeństwo sportowcom.</h3>
+
+
+          <button className={cls(css.rectangle, css.rectangleBig, css.whiteBg, css.rectangleBorder)}>
+            <span className={css.rectangleText}>
+              Wyślij swoje zgłoszenie
+            </span>
+            <span className={cls(css.rectangleCircle, css.rectangleCircleBig, css.yellowBg)}>
+              <Arrow color={COLOR.black} />
+            </span>
+          </button>
+
+
+          <div className={css.bigYellowSmth}>
+            <span className={css.bigQuestionMark}>?</span>
+            <span>
+              Uprawiasz nietypową dyscyplinę sportui chcesz czuć się bezpiecznie? <button className={css.openFormBtn}>Skontaktuj się z nami</button>, porozmawiamy o najlepszym rozwiązaniu dla Ciebie.
+            </span>
+          </div>
+
+
+          <SportCircles />
+
+        </section>
+
+        <Sidebar
+            open={true}
+            pullRight={true}
+            contentClassName={css.xxx}
+          >
+            <h1>asdasdasdasd</h1>
+        </Sidebar>
+
+    </React.Fragment>
   )
 }

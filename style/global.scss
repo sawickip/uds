@@ -1,7 +1,31 @@
+@import "colors";
+
 body {
   font-family: 'Roboto', sans-serif;
 }
 
 div {
   box-sizing: border-box;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.cwhite {
+  color: $white;
+}
+
+.cblack {
+  color: $black;
+}
+
+.fwhite {
+  fill: $white;
+  stroke: $white;
+}
+
+.fblack {
+  fill: $black;
+  stroke: $black;
 }

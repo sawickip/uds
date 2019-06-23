@@ -1,0 +1,67 @@
+
+@import "../../style/colors.scss";
+
+.root {}
+
+.circlet {
+  position: absolute;
+  border-style: solid;
+  border-radius: 50%;
+  background: transparent;
+  border-width: 2px;
+  display: block;
+}
+
+.circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  svg {
+    fill: $white;
+  }
+}
+
+.small {
+  $size: 140px;
+  width: $size;
+  height: $size;
+  background-color: #f3abb7;
+
+  svg {
+    height: 60px;
+  }
+
+  .circlet {
+    &:nth-child(1) {
+      width: 140px;
+      height: 140px;
+      border-color: black;
+      top: 10px;
+      left: -10px;
+    }
+    &:nth-child(2) {
+      width: 140px;
+      height: 140px;
+      border-color:yellow;
+      top: 5px;
+      left: 5px;
+    }
+    &:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      border-color: red;
+      top: -10px;
+      left: -10px;
+    }
+    &:nth-child(4) {
+      width: 150px;
+      height: 150px;
+      border-color: green;
+      top: -15px;
+      left: 5px;
+    }
+  }
+}

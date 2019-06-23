@@ -1,5 +1,10 @@
 @import "colors";
 
+
+body {
+  height: 2000px;
+}
+
 .yellowBg {
   background-color: $yellow;
 }
@@ -13,6 +18,7 @@
 .heroContainer {
   width: 100%;
   height: 100vh;
+  min-height: 700px;
   overflow: hidden;
 }
 .heroImage {
@@ -25,7 +31,7 @@
   color: $white;
   font-size: 38px;
   text-align: center;
-  margin-top: 90px;
+  margin: 10px 0 100px;
 }
 .root { // header
   position: absolute;
@@ -36,8 +42,10 @@
 }
 .rootContent {
   display: flex;
+  min-height: 125px;
   align-items: center;
-  margin-top: 7vh;
+  margin-top: 30px;
+  height: 20vh;
 }
 .mainLine {
   flex: 1 1 auto;
@@ -47,7 +55,7 @@
   background-color: $white;
 }
 .sideLine {
-  flex: 0 1 3vw;
+  flex: 0 1 2vw;
 
   &:first-child {
     margin-left: 0;
@@ -72,17 +80,26 @@
   font-size: 14px;
 }
 .rectangleBig {
-  padding: 0 10px 0 10px;
-  font-size: 16px;
   height: 54px;
   width: 300px;
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+  font-size: 16px;
   border-radius: 27px;
+
+  svg {
+    position: relative;
+    top: -2px;
+  }
 }
 .rectangleText {
   flex: 1 0 auto;
   text-align: center;
 }
 .rectangleCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   margin-left: auto;
 }
@@ -94,15 +111,100 @@
   width: 32px;
   height: 32px;
 }
+.rectangleBorder {
+  border: 1px solid #424242;
+}
 .freeConsultationText {
   color: $white;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+// 2nd section
+.threeHeroes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 115px 0 60px 0;
+}
+.hero {
+  height: 60px;
+  margin: 0 10px;
+}
+.bigHero {
+  height: 100px;;
+}
+
+.mainText {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #424242;
+}
+.subText {
+  font-size: 22px;
+  text-align: center;
+  opacity: 0.25;
+  margin-bottom: 60px;
+}
+
+.bigYellowSmth {
+  border-radius: 50%;
+  background-color: $yellow;
+  width: 285px;
+  height: 285px;
+  margin: 50px 100px 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 50px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #424242;
+  text-align: center;
+  flex-wrap: wrap;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    top: 45px;
+    background-color: #C6A695;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 40px;
+    background-color: #C6A695;
+  }
+}
+
+.bigQuestionMark {
+  font-size: 80px;
+  position: absolute;
+  top: -15px;
+}
+
+.openFormBtn {
+  border: none;
+  background: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 
-/* remove */
-.test {
-  height: 1000px;
+.xxx {
+  background: white;
+  width: 200px;
+  z-index: 1;
 }
