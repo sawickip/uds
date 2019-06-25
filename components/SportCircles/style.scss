@@ -1,7 +1,21 @@
 
 @import "../../style/colors.scss";
 
-.root {}
+
+@mixin get-circlet($size, $svgWidth: null, $svgHeight: $svgWidth) {
+  width: #{$size}px;
+  height: #{$size}px;
+
+  svg {
+    width: #{$svgWidth}px;
+    height: #{$svgHeight}px;
+  }
+}
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .circlet {
   position: absolute;
@@ -22,46 +36,58 @@
   svg {
     fill: $white;
   }
-}
-
-.small {
-  $size: 140px;
-  width: $size;
-  height: $size;
-  background-color: #f3abb7;
-
-  svg {
-    height: 60px;
-  }
 
   .circlet {
     &:nth-child(1) {
-      width: 140px;
-      height: 140px;
-      border-color: black;
-      top: 10px;
-      left: -10px;
+      width: 100%;
+      height: 100%;
+      border-color: $c1;
+      top: -5px;
+      left: -5px;
     }
+
     &:nth-child(2) {
-      width: 140px;
-      height: 140px;
-      border-color:yellow;
+      width: 100%;
+      height: 100%;
+      border-color: $c2;
+      top: -5px;
+      left: 5px;
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+      height: 100%;
+      border-color: $c3;
+      top: 5px;
+      left: -5px;
+    }
+
+    &:nth-child(4) {
+      width: 100%;
+      height: 100%;
+      border-color: $c4;
       top: 5px;
       left: 5px;
     }
-    &:nth-child(3) {
-      width: 150px;
-      height: 150px;
-      border-color: red;
-      top: -10px;
-      left: -10px;
-    }
-    &:nth-child(4) {
-      width: 150px;
-      height: 150px;
-      border-color: green;
-      top: -15px;
-      left: 5px;
-    }
   }
+}
+
+.tiny {
+  @include get-circlet(100);
+}
+
+.small {
+  @include get-circlet(140, 50);
+}
+
+.medium {
+  @include get-circlet(170, 62);
+}
+
+.big {
+  @include get-circlet(220, 82);
+}
+
+.huge {
+  @include get-circlet(252, 82);
 }

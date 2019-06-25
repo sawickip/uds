@@ -30,7 +30,7 @@ export default function Badges () {
   return (
     <div className={css.root}>
       <ul className={css.list}>
-        {badges.map(item => <Badge {...item} />)}
+        {badges.map((item, index) => <Badge key={index} {...item} />)}
       </ul>
     </div>
   )

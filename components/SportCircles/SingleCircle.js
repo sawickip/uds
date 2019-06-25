@@ -5,14 +5,18 @@ import css from './style.scss';
 
 export default class SingleCircle extends Component {
   render () {
-    console.log(this.props)
+    const { icon, empty } = this.props;
     return (
-      <div className={cls(css.circle, css[this.props.size])}>
-        <span className={css.circlet} />
-        <span className={css.circlet} />
-        <span className={css.circlet} />
-        <span className={css.circlet} />
-        {this.props.icon}   
+      <div className={cls(css.circle, css[this.props.size])} style={this.props.style}>
+        {empty ? null : (
+          <>
+            <span className={css.circlet} />
+            <span className={css.circlet} />
+            <span className={css.circlet} />
+            <span className={css.circlet} />
+          </>
+        )}
+        {icon ? icon : null}
       </div>
     )
   }
